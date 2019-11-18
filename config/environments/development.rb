@@ -27,9 +27,12 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+<<<<<<< HEAD
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+=======
+>>>>>>> 5e5ffadb35c09d3f19e2d6eb09c7388332889760
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
@@ -47,8 +50,11 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+<<<<<<< HEAD
   config.mailer_sender = 'vincent@thebest.tigers'
 
+=======
+>>>>>>> 5e5ffadb35c09d3f19e2d6eb09c7388332889760
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
