@@ -10,5 +10,6 @@ class Booking < ApplicationRecord
 
   def set_total_price
     self.total_price = (booking_end - booking_start) * tiger.price
+    save
   end
 end

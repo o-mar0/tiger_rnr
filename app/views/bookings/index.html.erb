@@ -1,13 +1,21 @@
 <div class="tigers-container">
-  <%= current_user.bookings.each do |booking| %>
-    <div class="card-tiger d-flex justify-content-around align-items-center">
-      <div class="card-left">
-        <%= booking.booking_start %>
-        <%= booking.booking_end %>
+  <% current_user.bookings.each do |booking| %>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="card-left mr-3">
+        <p>Schedule:</p>
+        <p>Start date: <%= booking.booking_start %></p>
+        <p>End date: <%= booking.booking_end %></p>
       </div>
-      <div class="card-right">
-        <%= booking.user.username %>
-        <%= booking.tiger.name %>
+      <div class="card-right d-flex justify-content-center align-items-center ml-3">
+        <div class="card-left mr-3">
+          <p>Renter</p>
+          <p><%= booking.user.username %></p>
+          <p><%= booking.user.email %></p>
+        </div>
+        <div class="card-right ml-3">
+          <p>Tiger</p>
+          <%= booking.tiger.name %>
+        </div>
       </div>
     </div>
   <% end %>
