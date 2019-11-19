@@ -1,8 +1,9 @@
-<div class="tiger-container">
-  <div class="banner">
-    <div class="form">
-    </div>
+<div class="banner d-flex justify-content-around align-items-center">
+  <div class="form">
   </div>
+  <%= link_to 'List a tiger for hire', new_tiger_path %>
+</div>
+<div class="tigers-container">
   <div class="card-grid">
     <% @tigers.each do |tiger| %>
       <div class="card d-flex align-items-center">

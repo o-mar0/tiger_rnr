@@ -1,0 +1,10 @@
+<% species = ['Sumatran Tiger', 'Amur Tiger', 'Bengal Tiger', 'South China Tiger', 'Malayan Tiger', 'Indo-Chinese Tiger'] %>
+
+<%= simple_form_for @tiger do |f| %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :species, as: :select, collection: species %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
