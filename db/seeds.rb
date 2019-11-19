@@ -23,7 +23,7 @@ puts 'Users cleared'
 puts 'creating users'
 users = [
 {
-  username: 'Ameya69',
+  username: 'Ameya95',
   email: 'ameya@gmail.com',
   password: 'password'
 },
@@ -52,7 +52,7 @@ tigers = [
   species: 'Bengal Tiger',
   price: 400,
   location: 'Melbourne',
-  user: User.find_by(username: 'Ameya69')
+  user: User.find_by(username: 'Ameya95')
 },
 {
   name: 'Tigaroo',
@@ -60,7 +60,7 @@ tigers = [
   species: 'Sumatran Tiger',
   price: 1000,
   location: 'Cairo',
-  user: User.find_by(username: 'Ameya69')
+  user: User.find_by(username: 'Ameya95')
 },
 {
   name: 'Tigger',
