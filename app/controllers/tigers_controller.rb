@@ -8,6 +8,7 @@ class TigersController < ApplicationController
 
   def show
     # @tiger in find_tiger
+    @booking = Booking.new
   end
 
   def new
