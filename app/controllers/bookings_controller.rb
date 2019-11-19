@@ -15,10 +15,10 @@ class BookingsController < ApplicationController
     # user = current_user whoever makes the booking
     @booking.user = current_user
 
-    if @tiger.save
+    if @booking.save
       redirect_to bookings_path, notice: 'Booking was successful'
     else
-      render :new
+      render 'tigers/show'
     end
   end
 
@@ -35,6 +35,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:booking_start, :booking_finish, :user, :tiger)
+    params.require(:booking).permit(:booking_start, :booking_end, :user, :tiger)
   end
 end
