@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: 'tigers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :tigers, except: [:index]
-  resources :bookings, only: %i[index new create update destroy]
+  resources :tigers, except: [:index] do
+    resources :bookings, only: %i[new create]
+  end
+
+  resources :bookings, only: %i[index update destroy]
 end
 
 # restaurants

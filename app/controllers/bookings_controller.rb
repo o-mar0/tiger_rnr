@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: %i[create destroy]
+  before_action :find_booking, only: %i[destroy]
 
   def index
     @bookings = Booking.all
@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
   def create
     # @booking from find_booking
     # find the tiger
-    @tiger = Tiger.find(params[:id])
+    @tiger = Tiger.find(params[:tiger_id])
     @booking = Booking.new(booking_params)
     # set the booking.tiger to the tiger object
     @booking.tiger = @tiger
@@ -16,14 +16,13 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @tiger.save
-      redirect_to @booking, notice: 'Booking was successful'
+      redirect_to bookings_path, notice: 'Booking was successful'
     else
       render :new
     end
   end
 
   def update
-
   end
 
   def destroy
