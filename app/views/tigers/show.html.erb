@@ -1,2 +1,27 @@
-<h1>Tigers#show</h1>
-<p>Find me in app/views/tigers/show.html.erb</p>
+<div class="tigers-container">
+  <div class="banner">
+
+  </div>
+  <div class="card row">
+    <div class="card-tiger col-9">
+      <%= @tiger.name %>
+      <%= @tiger.age %>
+      <%= @tiger.species %>
+      <%= @tiger.location %>
+      <%= @tiger.price %>
+    </div>
+    <div class="card-owner col-3">
+      <%= @tiger.user.username %>
+      <%= @tiger.user.email %>
+    </div>
+  </div>
+  <div class="card-reviews">
+    <% @tiger.reviews.each do |review| %>
+      <div class="card">
+        <%= review.name %>
+        <%= review.email %>
+        <%= review.content %>
+      </div>
+    <% end %>
+  </div>
+</div>
