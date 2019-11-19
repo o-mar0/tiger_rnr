@@ -1,21 +1,18 @@
 <div class="tigers-container">
-  <div class="banner">
-
+  <div class="banner-show d-flex justify-content-around align-items-center">
+    <h1><%= @tiger.name %></h1>
   </div>
   <div class="card row">
-    <div class="card-tiger col-9">
+    <div class="card-tiger col-8">
       <%= @tiger.name %>
       <%= @tiger.age %>
       <%= @tiger.species %>
       <%= @tiger.location %>
       <%= @tiger.price %>
     </div>
-    <div class="card-owner col-3">
+    <div class="card-owner col-4">
       <%= @tiger.user.username %>
       <%= @tiger.user.email %>
     </div>
   </div>
-
-
-
 </div>

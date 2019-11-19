@@ -52,6 +52,6 @@ class TigersController < ApplicationController
   end
 
   def tiger_params
-    params.require(:tiger).permit(:age, :species, :price, :location)
+    params.require(:tiger).permit(:name, :age, :species, :price, :location)
   end
 end
