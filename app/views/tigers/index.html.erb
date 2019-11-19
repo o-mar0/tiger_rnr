@@ -15,6 +15,7 @@
           <%= tiger.location %>
           <%= tiger.price %>
           <%= link_to 'Edit', edit_tiger_path(tiger) %>
+          <%= link_to 'Delete', tigers_path, method: :delete, data: { confirm: "Are you sure you want to delete #{tiger.name}?"}   %>
         </div>
       </div>
     <% end %>

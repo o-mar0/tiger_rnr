@@ -1,6 +1,6 @@
 <div class="tigers-container text-center">
   <h1 class="header-edit">Edit <%= @tiger.name %></h1>
-  <%= link_to 'Back to ' + @tiger.name, tiger_path(@tiger) %>
+  <%= link_to "Back to #{@tiger.name}?", tiger_path(@tiger) %>
 
   <%= render 'form' %>
 </div>
