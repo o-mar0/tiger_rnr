@@ -23,9 +23,13 @@ class BookingsController < ApplicationController
   end
 
   def update
+    if current_user.owner?
+
   end
 
   def destroy
+    @booking.destroy
+    redirect_to bookings_path, notice: 'Booking was successfully deleted'
   end
 
   private
