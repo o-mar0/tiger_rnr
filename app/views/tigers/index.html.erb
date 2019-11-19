@@ -1,11 +1,22 @@
-<div class="container">
+<div class="tiger-container">
   <div class="banner">
     <div class="form">
     </div>
   </div>
   <div class="card-grid">
     <% @tigers.each do |tiger| %>
-
+      <div class="card d-flex align-items-center">
+        <div class="card-image">
+        </div>
+        <div class="card-details">
+          <%= tiger.name %>
+          <%= tiger.age %>
+          <%= tiger.location %>
+        </div>
+      </div>
     <% end %>
   </div>
+</div>
+<div class="footer">
+
 </div>
