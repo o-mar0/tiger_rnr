@@ -1,2 +1,6 @@
-<h1>Tigers#edit</h1>
-<p>Find me in app/views/tigers/edit.html.erb</p>
+<div class="tigers-container text-center">
+  <h1 class="header-edit">Edit <%= @tiger.name %></h1>
+  <%= link_to 'Back to ' + @tiger.name, tiger_path(@tiger) %>
+
+  <%= render 'form' %>
+</div>
