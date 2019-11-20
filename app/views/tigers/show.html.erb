@@ -1,4 +1,4 @@
-<div class="banner-show d-flex justify-content-left align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @tiger.photo %>')">
+<div class="banner-show d-flex justify-content-left align-items-center" style="background-image: url('<%= cl_image_path @tiger.photo %>')">
 
   <div class="card-show">
     <h1><%= @tiger.name %></h1>
@@ -25,7 +25,9 @@
         <%= simple_form_for [@tiger, @booking] do |f| %>
           <%= f.input :booking_start, as: :date %>
           <%= f.input :booking_end, as: :date %>
-          <%= f.submit class: "submit" %>
+          <div class="card-right text-right">
+            <%= f.submit class: "submit" %>
+          </div>
         <% end %>
       </div>
 
