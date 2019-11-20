@@ -3,10 +3,12 @@
 <%= simple_form_for @tiger do |f| %>
   <%= f.input :name %>
   <%= f.input :age %>
-  <%= f.input :species, as: :select, collection: species %>
+  <%= f.input :species, as: :select, collection: species, input_html: { class: 'select2' } %>
   <%= f.input :location %>
   <%= f.input :price %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit class: 'submit' %>
+  <div class="card-right text-right">
+    <%= f.submit class: 'submit' %>
+  </div>
 <% end %>
