@@ -45,35 +45,14 @@ puts 'users created!'
 
 
 puts 'creating Tigers'
-tigers = [
-{
-  name: 'Big Cat',
-  age: 8,
-  species: 'Bengal Tiger',
-  price: 400,
-  location: 'Melbourne',
-  user: User.find_by(username: 'Ameya95')
-},
-{
-  name: 'Tigaroo',
-  age: 2,
-  species: 'Sumatran Tiger',
-  price: 1000,
-  location: 'Cairo',
-  user: User.find_by(username: 'Ameya95')
-},
-{
-  name: 'Tigger',
-  age: 4,
-  species: 'Indochinese',
-  price: 700,
-  location: 'Indonesia',
-  user: User.find_by(username: 'Vincent01')
-}
-]
-tigers.each do |tiger|
-  Tiger.create(tiger)
+
+species = ['Sumatran Tiger', 'Amur Tiger', 'Bengal Tiger', 'South China Tiger', 'Malayan Tiger', 'Indo-Chinese Tiger']
+
+20.times do |num|
+  age = rand(1..12)
+  Tiger.create(name: Faker::Name.first_name, age: age, species: species.sample, price: 2000 - (100 * age), location: Faker::Address.full_address, user: User.all.sample)
 end
+
 puts 'tigers created!'
 
 puts 'finished seeding'
