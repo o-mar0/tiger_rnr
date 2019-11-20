@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path, notice: 'Booking was successful'
     else
-      render 'tiger/new'
+      render 'tigers/new'
     end
   end
 
