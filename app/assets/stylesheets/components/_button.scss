@@ -13,3 +13,13 @@
     text-decoration: none;
   }
 }
+
+.button-sm {
+  padding: 6px 12px;
+}
+
+.card-button {
+  &:hover {
+    text-decoration: none;
+  }
+}

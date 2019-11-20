@@ -1,26 +1,30 @@
 <div class="tigers-container">
+  <div class="card-background fixed-top">
+  </div>
   <div class="card-grid">
     <% @tigers.each do |tiger| %>
+      <a href="/tigers/<%= tiger.id %>" class="card-button">
         <div class="card-tiger">
           <!-- <div class="card-link"> -->
             <div class="card-link d-flex align-items-center">
               <div class="card-image">
               </div>
-              <%= link_to tiger_path(tiger) do %>
-                <div class="card-details">
-                  <%= tiger.name %>
-                  <%= tiger.age %>
-                  <%= tiger.location %>
-                  <%= tiger.price %>
-                  <% if user_signed_in? %>
-                    <%= link_to 'Edit', edit_tiger_path(tiger) %>
-                    <%= link_to 'Delete', tiger_path(tiger), method: :delete, data: { confirm: "Are you sure you want to delete #{tiger.name}?"} %>
-                  <% end %>
-                </div>
-              <% end %>
+              <div class="card-details">
+                <p>Name: <%= tiger.name %></p>
+                <p>Age: <%= tiger.age %> years old</p>
+                <p>Located: <%= tiger.location %></p>
+                <p>Price per day: $<%= tiger.price %></p>
+                <% if user_signed_in? %>
+                  <div class="card-buttons">
+                    <%= link_to 'Edit', edit_tiger_path(tiger), class: 'button button-sm' %>
+                    <%= link_to 'Delete', tiger_path(tiger), method: :delete, data: { confirm: "Are you sure you want to delete #{tiger.name}?"}, class: 'button button-sm' %>
+                  </div>
+                <% end %>
+              </div>
             </div>
           <!-- </div> -->
         </div>
+      </a>
     <% end %>
   </div>
 </div>
