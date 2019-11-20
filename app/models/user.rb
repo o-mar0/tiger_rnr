@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
 
   def owner?
-    user.tigers.any?
+    tigers.any?
   end
 end
