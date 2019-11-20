@@ -2,3 +2,10 @@
   width: 70vw;
   margin: 96px auto;
 }
+
+.container-top {
+  padding: 24px 0 72px;
+  & > * {
+    margin: 0;
+  }
+}
