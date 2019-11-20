@@ -17,6 +17,8 @@ gem 'webpacker'
 
 gem 'faker'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'devise'
 
 group :development do
