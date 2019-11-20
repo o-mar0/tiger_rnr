@@ -20,7 +20,7 @@ class TigersController < ApplicationController
     @tiger.user = current_user
 
     if @tiger.save
-      redirect_to @tiger, notice: 'Tiger Was Successfuly Created'
+      redirect_to tiger_path(@tiger), notice: 'Tiger Was Successfuly Created'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class TigersController < ApplicationController
   def update
     # @tiger in find_tiger
     if @tiger.update(tiger_params)
-      redirect_to @tiger, notice: 'Tiger Was Successfuly Updated'
+      redirect_to tiger_path(@tiger), notice: 'Tiger Was Successfuly Updated'
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class TigersController < ApplicationController
   def destroy
     # @tiger in find_tiger
     @tiger.destroy
-    redirect_to root_path, notice: 'Tiger Was Successfuly Deleted'
+    redirect_to tigers_path, notice: 'Tiger Was Successfuly Deleted'
   end
 
   private

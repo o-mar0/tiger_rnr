@@ -2,11 +2,13 @@
   <div class="banner-show d-flex justify-content-around align-items-center">
     <h1><%= @tiger.name %></h1>
   </div>
-  <%= simple_form_for [@tiger, @booking] do |f| %>
-    <%= f.input :booking_start, as: :date %>
-    <%= f.input :booking_end, as: :date %>
-    <%= f.submit %>
-  <% end %>
+  <div class="booking-form">
+    <%= simple_form_for [@tiger, @booking] do |f| %>
+      <%= f.input :booking_start, as: :date %>
+      <%= f.input :booking_end, as: :date %>
+      <%= f.submit %>
+    <% end %>
+  </div>
   <div class="card row">
     <div class="card-tiger col-8">
       <%= @tiger.name %>

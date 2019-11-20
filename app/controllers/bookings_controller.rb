@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
 
   def update
     if current_user.owner?
-
+    end
   end
 
   def destroy
