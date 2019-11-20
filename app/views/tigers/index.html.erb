@@ -1,8 +1,3 @@
-<div class="banner d-flex justify-content-around align-items-center">
-  <div class="form">
-  </div>
-  <%= link_to 'List a tiger for hire', new_tiger_path %>
-</div>
 <div class="tigers-container">
   <div class="card-grid">
     <% @tigers.each do |tiger| %>
@@ -17,8 +12,10 @@
                   <%= tiger.age %>
                   <%= tiger.location %>
                   <%= tiger.price %>
-                  <%= link_to 'Edit', edit_tiger_path(tiger) %>
-                  <%= link_to 'Delete', tiger_path(tiger), method: :delete, data: { confirm: "Are you sure you want to delete #{tiger.name}?"}   %>
+                  <% if user_signed_in? %>
+                    <%= link_to 'Edit', edit_tiger_path(tiger) %>
+                    <%= link_to 'Delete', tiger_path(tiger), method: :delete, data: { confirm: "Are you sure you want to delete #{tiger.name}?"} %>
+                  <% end %>
                 </div>
               <% end %>
             </div>

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'tigers#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :tigers, except: [:index] do
+  resources :tigers do
     resources :bookings, only: %i[new create]
   end
 
