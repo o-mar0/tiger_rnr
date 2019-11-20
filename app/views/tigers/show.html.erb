@@ -1,27 +1,35 @@
-<div class="tigers-container">
-  <div class="banner-show d-flex justify-content-around align-items-center">
+<div class="banner-show d-flex justify-content-left align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @tiger.photo %>')">
+
+  <div class="card-show">
     <h1><%= @tiger.name %></h1>
+    <p><strong>Age: </strong><%=@tiger.age%> years old</p>
+    <p><strong>Species: </strong><%=@tiger.species%></p>
+    <p><strong>Location: </strong><%=@tiger.location%></p>
+    <p><strong>Price per day: </strong>$<%=@tiger.price%></p>
   </div>
-  <div class="booking-form">
-    <%= simple_form_for [@tiger, @booking] do |f| %>
-      <%= f.input :booking_start, as: :date %>
-      <%= f.input :booking_end, as: :date %>
-      <%= f.submit %>
-    <% end %>
+</div>
+
+<div class="container">
+  <div class="container-row">
+
+      <div class="card-owner">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-owner-infos">
+          <h2> <%= @tiger.user.username %></h2>
+          <p><%= @tiger.user.email %></p>
+        </div>
+      </div>
+
+      <div class="booking-form">
+        <%= simple_form_for [@tiger, @booking] do |f| %>
+          <%= f.input :booking_start, as: :date %>
+          <%= f.input :booking_end, as: :date %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+
   </div>
-  <div class="card row">
-    <div class="card-tiger col-8">
-      <%= @tiger.name %>
-      <%= @tiger.age %>
-      <%= @tiger.species %>
-      <%= @tiger.location %>
-      <%= @tiger.price %>
-    </div>
-    <div class="card-owner col-4">
-      <%= @tiger.user.username %>
-      <%= @tiger.user.email %>
-    </div>
-  </div>
+</div>
 
   <!--
   1. simple form for bookings
@@ -29,4 +37,4 @@
   3. need the tiger
   4. input -> booking-start & booking_end
   5. submit -> redirect to booking index -->
-</div>
+
