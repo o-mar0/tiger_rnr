@@ -1,8 +1,8 @@
 .button {
   background: rgba(255,106,0,0.8);
   padding: 12px 24px;
-  margin: 0;
   border-radius: 2px;
+  margin: 0;
   border: 0;
   transition: 0.2s;
   color: #fff;
@@ -18,8 +18,25 @@
   padding: 6px 12px;
 }
 
+.button-space {
+  display: inline-block;
+  margin: 12px 0;
+}
+
 .card-button {
   &:hover {
     text-decoration: none;
+  }
+}
+
+.submit {
+  width: 100%;
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.9);
+  color: $main;
+  transition: 0.2s;
+
+  &:hover {
+    background: rgba(255,255,255,1);
   }
 }
