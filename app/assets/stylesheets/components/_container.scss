@@ -3,13 +3,10 @@
   margin: 96px auto;
 }
 
-.container {
-  margin: 72px !important;
-}
 
-.container-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 72px;
-  margin: 72px 0;
+.container-top {
+  padding: 24px 0 72px;
+  & > * {
+    margin: 0;
+  }
 }
