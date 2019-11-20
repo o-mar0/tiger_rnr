@@ -20,11 +20,11 @@
         </div>
       </div>
 
-      <div class="booking-form">
+      <div class="form booking-form">
         <%= simple_form_for [@tiger, @booking] do |f| %>
           <%= f.input :booking_start, as: :date %>
           <%= f.input :booking_end, as: :date %>
-          <%= f.submit %>
+          <%= f.submit class: "submit" %>
         <% end %>
       </div>
 
