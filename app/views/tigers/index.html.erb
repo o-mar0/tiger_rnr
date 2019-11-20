@@ -7,19 +7,12 @@
         <div class="card-tiger">
           <!-- <div class="card-link"> -->
             <div class="card-link d-flex align-items-center">
-              <div class="card-image">
-              </div>
-              <div class="card-details">
+              <%= cl_image_tag tiger.photo, alt: "alttext", class: 'card-image' %>
+              <div class="card-details ml-3">
                 <p>Name: <%= tiger.name %></p>
                 <p>Age: <%= tiger.age %> years old</p>
                 <p>Located: <%= tiger.location %></p>
                 <p>Price per day: $<%= tiger.price %></p>
-                <% if user_signed_in? %>
-                  <div class="card-buttons">
-                    <%= link_to 'Edit', edit_tiger_path(tiger), class: 'button button-sm' %>
-                    <%= link_to 'Delete', tiger_path(tiger), method: :delete, data: { confirm: "Are you sure you want to delete #{tiger.name}?"}, class: 'button button-sm' %>
-                  </div>
-                <% end %>
               </div>
             </div>
           <!-- </div> -->
