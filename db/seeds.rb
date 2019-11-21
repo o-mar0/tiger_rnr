@@ -25,17 +25,20 @@ users = [
 {
   username: 'Ameya95',
   email: 'ameya@gmail.com',
-  password: 'password'
+  password: 'password',
+  remote_photo_url: 'https://avatars0.githubusercontent.com/u/46313021?v=4'
 },
 {
   username: 'Vincent01',
   email: 'vincent@hotmail.com',
-  password: 'password'
+  password: 'password',
+  remote_photo_url: 'https://avatars3.githubusercontent.com/u/56074503?v=4'
 },
 {
   username: 'Omar',
   email: 'omark@gmail.com',
-  password: 'password2'
+  password: 'password2',
+  remote_photo_url: 'https://avatars2.githubusercontent.com/u/52895382?v=4'
 }
 ]
 users.each do |user|
