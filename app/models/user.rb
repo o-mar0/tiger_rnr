@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   has_many :tigers, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :incoming_bookings, through: :tigers, source: :bookings
@@ -7,7 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :username, :email, :password, presence: true
+  validates :username, :email, :password, :photo, presence: true
   validates :username, :email, uniqueness: true
 
   def owner?
