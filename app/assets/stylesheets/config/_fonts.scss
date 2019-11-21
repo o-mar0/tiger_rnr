@@ -5,6 +5,18 @@
 $body-font: "Open Sans", "Helvetica", "sans-serif";
 $headers-font: "Raleway", "Helvetica", "sans-serif";
 
+.accepted {
+  color: #00e034;
+}
+
+.rejected {
+  color: red;
+}
+
+.orange {
+  color: orange;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

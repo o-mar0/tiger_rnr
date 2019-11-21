@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: %i[destroy]
+  before_action :find_booking, only: %i[destroy accept reject]
 
   def index
-    @bookings = Booking.all
+    @outgoing_bookings = current_user.bookings
+    @incoming_bookings = current_user.incoming_bookings
   end
 
   def create
@@ -30,6 +31,16 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to bookings_path, notice: 'Booking was successfully deleted'
+  end
+
+  def accept
+    @booking.update(status: "accepted")
+    redirect_to bookings_path
+  end
+
+  def reject
+    @booking.update(status: "rejected")
+    redirect_to bookings_path
   end
 
   private
