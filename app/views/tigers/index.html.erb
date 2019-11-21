@@ -1,6 +1,15 @@
 <div class="tigers-container">
   <div class="card-background fixed-top">
   </div>
+
+  <%= form_tag tigers_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search tigers"
+    %>
+  <% end %>
+
   <div class="card-grid">
     <% @tigers.each do |tiger| %>
       <%= link_to tiger_path(tiger), class: 'card-button' do  %>
