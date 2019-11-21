@@ -12,14 +12,14 @@ const scrollNavbar = () => {
   if (banner) {
     addTiger.removeAttribute('hidden');
     navbar.style.background = 'rgba(255,255,255,0)';
-    icon.style.color = '#efefef';
-    addTiger.style.color = '#efefef';
+    icon.style.color = '#f7f7f7';
+    addTiger.style.color = '#f7f7f7';
     addTiger.style.opacity = 1;
   } if (showBanner) {
     backTo.removeAttribute('hidden');
     navbar.style.background = 'rgba(255,255,255,0)';
-    icon.style.color = '#efefef';
-    backTo.style.color = '#efefef';
+    icon.style.color = '#f7f7f7';
+    backTo.style.color = '#f7f7f7';
     backTo.style.opacity = 1;
     window.addEventListener('scroll', (event) => {
       console.log(event.currentTarget.scrollY);
