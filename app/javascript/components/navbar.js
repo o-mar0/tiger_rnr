@@ -28,6 +28,11 @@ const scrollNavbar = () => {
         icon.style.color = '#333';
         backTo.style.color = '#333';
         backTo.style.opacity = 1;
+      } else {
+        navbar.style.background = 'rgba(255,255,255,0)';
+        icon.style.color = '#f7f7f7';
+        backTo.style.color = '#f7f7f7';
+        backTo.style.opacity = 1;
       }
     });
   }

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :tigers do
     resources :bookings, only: %i[new create]
+    resources :reviews, only: %i[create]
   end
 
   resources :bookings, only: %i[index update destroy]
