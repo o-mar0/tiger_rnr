@@ -28,10 +28,41 @@
         <%= simple_form_for [@tiger, @booking] do |f| %>
           <%= f.input :booking_start, as: :string, required: false, input_html: { class: 'datepicker' } %>
           <%= f.input :booking_end, as: :string, required: false, input_html: { class: 'datepicker' } %>
-          <%= f.submit 'book', class: "submit" %>
+          <%= f.submit 'Book', class: "submit" %>
         <% end %>
       </div>
 
+  </div>
+  <div class="container">
+    <div class="row">
+      <h2>Reviews for <%= @tiger.name %></h2>
+      <% @tiger.reviews.each do |review| %>
+        <div class="card-review d-flex justify-content-between align-items-center">
+          <div class="card-left d-flex justify-content-around align-items-center">
+            <%= cl_image_tag review.user.photo, alt: "image", class: 'avatar-large' %>
+            <div class="card-details mx-3">
+              <p><%= review.rating %></p>
+              <p><%= review.user.username %></p>
+            </div>
+          </div>
+          <div class="card-right text-left card-grow">
+            <%= review.content %>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-xs-4">
+        <div class="form booking-form my-3">
+          <h2>Rate your experience</h2>
+          <%= simple_form_for [@tiger, @review] do |f| %>
+            <%= f.input :rating, collection: [1, 2, 3, 4, 5], wrapper_html: { class: 'select2' } %>
+            <%= f.input :content %>
+            <div class="text-right">
+              <%= f.submit 'Send your review', class: "submit" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
