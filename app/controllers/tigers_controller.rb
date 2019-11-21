@@ -3,7 +3,16 @@ class TigersController < ApplicationController
   before_action :find_tiger, only: %i[show edit update destroy]
 
   def index
-    @tigers = Tiger.all
+    if params[:query].present?
+      sql_query = " \
+      tigers.name ILIKE :query \
+      OR tigers.location ILIKE :query \
+      OR users.username ILIKE :query \
+      "
+      @tigers = Tiger.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @tigers = Tiger.all
+    end
   end
 
   def show
