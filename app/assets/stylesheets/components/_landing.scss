@@ -13,6 +13,14 @@
   top: 35%;
   right: 96px;
   box-shadow: 0.3px 0.3px 12px 2px #333;
+
+  background-color: rgba(225, 225, 255, 0.30);
+}
+
+.landing-form:hover {
+  background-color: rgba(225, 225, 255, .80);
+  transition: 0.6s;
+
 }
 
 
