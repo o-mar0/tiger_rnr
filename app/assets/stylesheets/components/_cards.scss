@@ -79,6 +79,13 @@
     border: 0;
     border-radius: 4px;
     transition: 0.2s;
+    position: relative;
+
+    .card-buttons {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
 
     &:hover {
       color: $main;
@@ -96,6 +103,12 @@
       background-repeat: no-repeat;
       background-position: center center;
       color: #fff;
+
+      .card-name {
+        color: #fff;
+        font-size: 36px;
+        font-weight: bold;
+      }
     }
     .card-tab {
       color: $main;
