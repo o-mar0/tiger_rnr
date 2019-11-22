@@ -2,6 +2,10 @@
   margin-top: 80px !important;
 }
 
+.container-fluid {
+  padding: 0;
+}
+
 .container-row {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -24,5 +28,10 @@
 
 .page-container {
   min-height: 80vh;
-
+}
+  
+.container-fluid {
+  .container-top {
+    padding: 0 36px
+  }
 }

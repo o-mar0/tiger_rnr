@@ -1,6 +1,8 @@
 <div class="container-fluid">
-    <h2>Booking Dashboard</h2>
-    <h3><small>Last Update on:</small></h3>
+    <div class="container-top">
+      <h2>Booking Dashboard</h2>
+      <h3><small>Last Update on:</small></h3>
+    </div>
 
 
   <div class="container-booking">
@@ -20,19 +22,19 @@
               <p><strong>end on: </strong><%= booking.booking_end %></p>
             </div>
 
-              <% if booking.status == 'accepted' %>
-                <div class="status">
-                  <i class="fas fa-circle accepted"></i> <%= booking.status %>
-                </div>
-              <% elsif booking.status == 'rejected' %>
-                <div class="status">
-                  <i class="fas fa-circle rejected"></i> <%= booking.status %>
-                </div>
-              <% else %>
-                <div class="status">
-                  <i class="fas fa-circle orange"></i> <%= booking.status %>
-                </div>
-              <% end %>
+            <% if booking.status == 'accepted' %>
+              <div class="status">
+                <i class="fas fa-circle accepted"></i> <%= booking.status %>
+              </div>
+            <% elsif booking.status == 'rejected' %>
+              <div class="status">
+                <i class="fas fa-circle rejected"></i> <%= booking.status %>
+              </div>
+            <% else %>
+              <div class="status">
+                <i class="fas fa-circle orange"></i> <%= booking.status %>
+              </div>
+            <% end %>
 
           </div>
         <% end %>
@@ -73,6 +75,23 @@
     <% end %>
 
   </div>
-</div>
+  <% if current_user.owner? %>
+    <h2>Your current Tigers:</h2>
+    <div class="card-grid">
+        <% current_user.tigers.each do |tiger| %>
+          <div class="card">
+            <div class="card-buttons">
+              <%= link_to 'Edit', edit_tiger_path(tiger), class: 'button-link-white'  %>
+              <%= link_to '+', tiger_path(tiger), method: :delete, data: { confirm: "Are you sure you want to delete #{tiger.name}?"}, class: 'button-delete'  %>
+            </div>
+            <%= link_to tiger_path(tiger), class: 'card-link' do  %>
+              <div class="card-tiger d-flex justify-content-around align-items-center" style="background-image: url('<%= cl_image_path tiger.photo %>')">
+                <p class="card-name"><%= tiger.name %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+  <% end %>
 
 
