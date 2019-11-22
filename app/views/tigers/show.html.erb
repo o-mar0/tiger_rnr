@@ -38,6 +38,7 @@
   <div class="container">
     <div class="row">
       <h2>Reviews for <%= @tiger.name %></h2>
+      <hr>
       <% @tiger.reviews.each do |review| %>
         <div class="card-review d-flex justify-content-between align-items-center">
           <div class="card-left d-flex justify-content-around align-items-center">
@@ -56,7 +57,7 @@
         <div class="form booking-form my-3">
           <h2>Rate your experience</h2>
           <%= simple_form_for [@tiger, @review] do |f| %>
-            <%= f.input :rating, collection: [1, 2, 3, 4, 5], wrapper_html: { class: 'select2' } %>
+            <%= f.input :rating, collection: [1, 2, 3, 4, 5]%>
             <%= f.input :content %>
             <div class="text-right">
               <%= f.submit 'Send your review', class: "submit" %>
