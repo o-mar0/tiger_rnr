@@ -6,7 +6,7 @@
 // }
 .card-show {
   color: #ffeed1;
-  background: rgba(255,255,255,0.98);
+  background: rgba(255,255,255,0.92);
   color: #333;
   margin: 36px;
   border-radius: 4px;
@@ -14,7 +14,6 @@
   position: absolute;
   bottom: 48px;
   left: 48px;
-  background-color: rgba(225, 225, 255, 0.45);
 
   & > * {
     margin: 8px 0;
@@ -30,6 +29,7 @@
   background-color: rgba(225, 225, 255, .80);
   transition: 0.6s;
 }
+
 
 .card-review {
   width: 100%;
@@ -86,6 +86,13 @@
     border: 0;
     border-radius: 4px;
     transition: 0.2s;
+    position: relative;
+
+    .card-buttons {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
 
     &:hover {
       color: $main;
@@ -103,6 +110,12 @@
       background-repeat: no-repeat;
       background-position: center center;
       color: #fff;
+
+      .card-name {
+        color: #fff;
+        font-size: 36px;
+        font-weight: bold;
+      }
     }
     .card-tab {
       color: $main;

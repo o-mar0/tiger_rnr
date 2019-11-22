@@ -29,7 +29,7 @@
   }
 }
 
-.button-link {
+.button-link, .button-link-white, .button-delete {
   text-align: center;
   line-height: 16px;
   color: $main;
@@ -41,6 +41,23 @@
     opacity: 1;
     text-decoration: none;
   }
+}
+
+.button-link-white, .button-delete {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.button-delete {
+  border: 1px solid #fff;
+  padding: 0px 6.4px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  display: inline-block;
+  line-height: 22.8px;
 }
 
 .submit {
