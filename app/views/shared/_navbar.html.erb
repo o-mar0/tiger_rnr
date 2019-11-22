@@ -16,7 +16,7 @@
           <%= link_to 'Back to tigers', tigers_path, class: 'button-link button-back-tiger navbar-link' %>
         </div>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
             <%= link_to 'Edit Profile', edit_user_registration_path, class: 'dropdown-item' %>
